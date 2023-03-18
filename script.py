@@ -11,3 +11,12 @@ url = 'https://github.com/chloe-edmondson/debs.git'
 
 # Use wget to pull the repository
 os.system(f'wget {url}')
+
+# Extract the repository name from the URL
+repo_name = url.split('/')[-1].split('.')[0]
+
+# Move into the downloaded directory
+os.chdir(repo_name)
+
+# Install all .deb files in the directory
+os.system('sudo dpkg -i *.deb')
