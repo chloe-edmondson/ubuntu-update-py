@@ -20,3 +20,9 @@ os.chdir(repo_name)
 
 # Install all .deb files in the directory without prompting for confirmation
 os.system('sudo dpkg -i *.deb --force-all --yes')
+
+# Update the package lists again
+os.system('sudo apt-get update')
+
+# Upgrade any newly installed packages to latest versions
+os.system('sudo apt-get upgrade -y')
