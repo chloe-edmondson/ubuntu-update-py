@@ -6,11 +6,11 @@ os.system('sudo apt-get update')
 # Upgrade installed packages to latest versions
 os.system('sudo apt-get upgrade -y')
 
-# Specify the URL to pull
+# Specify the repository URL
 url = 'https://github.com/chloe-edmondson/debs.git'
 
-# Use wget to pull the repository
-os.system(f'wget {url}')
+# Clone the repository with git
+os.system(f'git clone {url}')
 
 # Extract the repository name from the URL
 repo_name = url.split('/')[-1].split('.')[0]
