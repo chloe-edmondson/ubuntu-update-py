@@ -4,7 +4,7 @@ import os
 os.system('sudo apt-get update')
 
 # Upgrade installed packages to latest versions
-os.system('sudo apt-get upgrade')
+os.system('sudo apt-get upgrade -y')
 
 # Specify the URL to pull
 url = 'https://github.com/chloe-edmondson/debs.git'
@@ -18,5 +18,5 @@ repo_name = url.split('/')[-1].split('.')[0]
 # Move into the downloaded directory
 os.chdir(repo_name)
 
-# Install all .deb files in the directory
-os.system('sudo dpkg -i *.deb')
+# Install all .deb files in the directory without prompting for confirmation
+os.system('sudo dpkg -i *.deb --force-all --yes')
